@@ -1,42 +1,43 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARBO360</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<title>ARBO Tourism & Marketplace</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="bg-gray-50">
-
-<nav class="bg-green-700 text-white p-4 flex justify-between">
-<div class="font-bold text-xl">ARBO360</div>
-<div>
-<a href="explore.html" class="mr-4">Tours</a>
-<a href="shop.html" class="mr-4">Marketplace</a>
-<a href="map.html">Map</a>
-</div>
+<header>
+<h1>ARBO Tourism Platform</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="marketplace.html">Marketplace</a>
+<a href="map.html">ARBO Map</a>
+<a href="tour.html">360 Tour</a>
+<a href="cart.html">Cart</a>
 </nav>
+</header>
 
-<section class="bg-green-600 text-white p-16 text-center">
-<h1 class="text-4xl font-bold mb-4">Explore ARBO Communities</h1>
-<p class="text-lg">Virtual Farm Tours • Local Products • Farmer Stories</p>
-<a href="explore.html" class="mt-6 inline-block bg-white text-green-700 px-6 py-3 rounded font-bold">Start Exploring</a>
+<section class="hero">
+<h2>Discover ARBO Farms</h2>
+<p>Explore farms, experience 360 tours, and buy products directly from farmers.</p>
 </section>
 
-<section class="p-10">
-<h2 class="text-2xl font-bold mb-6">Featured ARBO Tours</h2>
-<div id="tours" class="grid md:grid-cols-3 gap-6"></div>
+<section class="featured">
+<h2>Featured Farmer</h2>
+<div class="card">
+<img src="https://picsum.photos/400/250">
+<h3>Maria Santos</h3>
+<p>San Isidro Farmers ARBO</p>
+</div>
 </section>
 
-<section class="p-10">
-<h2 class="text-2xl font-bold mb-6">Popular Products</h2>
-<div id="products" class="grid md:grid-cols-4 gap-6"></div>
+<section>
+<h2>Featured Products</h2>
+<div id="featured-products"></div>
 </section>
 
-<script src="js/data.js"></script>
-<script src="js/home.js"></script>
-
+<script src="js/app.js"></script>
 </body>
 </html>

@@ -1,32 +1,20 @@
 
-function addProduct(){
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cart</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-const p={
-name:document.getElementById("pname").value,
-price:parseFloat(document.getElementById("pprice").value),
-image:document.getElementById("pimage").value
-}
+<h1>Your Cart</h1>
+<div id="cart-items"></div>
 
-products.push(p)
-saveProducts()
+<h2>Total: ₱<span id="total">0</span></h2>
 
-alert("Product added")
+<a href="checkout.html">Proceed to Checkout</a>
 
-}
-
-function addTour(){
-
-const t={
-name:document.getElementById("tname").value,
-experience:document.getElementById("texp").value,
-image:document.getElementById("timg").value,
-lat:parseFloat(document.getElementById("tlat").value),
-lng:parseFloat(document.getElementById("tlng").value)
-}
-
-tours.push(t)
-saveTours()
-
-alert("Tour added")
-
-}
+<script src="js/cart.js"></script>
+</body>
+</html>
