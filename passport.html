@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ARBO Passport</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+<header class="bg-green-700 text-white p-5">
+<h1 class="text-2xl font-bold">ARBO Tourism Passport</h1>
+</header>
+
+<div class="p-10">
+
+<p class="mb-4">Collect stamps when visiting ARBO sites.</p>
+
+<button onclick="addStamp()" class="bg-green-600 text-white px-4 py-2 rounded">
+Add Visit Stamp
+</button>
+
+<p class="mt-6 text-xl">Your Stamps: <span id="count">0</span></p>
+
+</div>
+
+<script>
+
+let stamps = 0
+
+function addStamp(){
+stamps++
+document.getElementById("count").innerText = stamps
+}
+
+</script>
+
+</body>
+</html>

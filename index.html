@@ -1,39 +1,41 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Camarines Sur ARBO Explorer</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="manifest" href="pwa/manifest.json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARBO Tourism - Camarines Sur 1</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gray-50">
 
-<header class="hero">
-<h1>ARBO Tourism & Marketplace</h1>
-<p>Explore ARBO communities, support farmers, and experience virtual farm tourism.</p>
-
-<div class="hero-buttons">
-<a href="map.html">Explore Camarines Sur Map</a>
-<a href="marketplace.html">Marketplace</a>
-</div>
+<header class="bg-green-700 text-white p-6">
+<h1 class="text-3xl font-bold">ARBO Tourism – Camarines Sur 1</h1>
+<p>Experience Agrarian Communities</p>
 </header>
 
-<nav class="nav">
-<a href="map.html">Tourism Map</a>
-<a href="tours.html">360 ARBO Tours</a>
-<a href="farmers.html">Farmer Profiles</a>
-<a href="marketplace.html">Marketplace</a>
-<a href="dashboard.html">Admin Analytics</a>
-<a href="mobile.html">Field Officer</a>
-</nav>
+<section class="p-10 grid md:grid-cols-2 gap-10 items-center">
 
-<script>
-if('serviceWorker' in navigator){
-navigator.serviceWorker.register('pwa/sw.js')
-}
-</script>
+<div>
+<h2 class="text-4xl font-bold mb-4">Discover ARBO Communities</h2>
+<p class="mb-6">Farm tours, products, and community experiences across DAR Camarines Sur 1.</p>
+
+<a href="explore.html" class="bg-green-600 text-white px-6 py-3 rounded mr-3">Explore ARBO Tours</a>
+<a href="marketplace.html" class="bg-yellow-500 text-white px-6 py-3 rounded">Marketplace</a>
+</div>
+
+<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854" class="rounded shadow">
+
+</section>
+
+<section class="p-10">
+<h2 class="text-2xl font-bold mb-6">Featured ARBO Experiences</h2>
+<div id="arboCards" class="grid md:grid-cols-3 gap-6"></div>
+</section>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
 
 </body>
 </html>

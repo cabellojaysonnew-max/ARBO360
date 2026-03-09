@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+
+<header class="bg-gray-800 text-white p-5">
+<h1 class="text-2xl font-bold">ARBO Admin Dashboard</h1>
+</header>
+
+<div class="p-10 grid md:grid-cols-3 gap-6">
+
+<div class="bg-white p-6 shadow rounded">
+<h2 class="font-bold text-lg">Add ARBO</h2>
+<input id="name" placeholder="ARBO Name" class="border p-2 w-full mt-2">
+<input id="loc" placeholder="Location" class="border p-2 w-full mt-2">
+<button onclick="addArbo()" class="bg-green-600 text-white px-4 py-2 mt-4 rounded">
+Add
+</button>
+</div>
+
+<div class="bg-white p-6 shadow rounded">
+<h2 class="font-bold text-lg">Drag‑Drop Tour Builder</h2>
+<div id="builder" class="border p-6 mt-3">
+Drag elements here (demo)
+</div>
+</div>
+
+</div>
+
+<script>
+function addArbo(){
+alert("Connect this form to Google Sheets API.");
+}
+</script>
+
+</body>
+</html>
