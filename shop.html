@@ -2,25 +2,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
-<title>ARBO Map</title>
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-
-<style>
-#map{height:100vh}
-</style>
-
+<title>Marketplace</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gray-100">
 
-<div id="map"></div>
+<header class="bg-green-700 text-white p-4 text-xl font-bold">
+ARBO Marketplace
+</header>
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="js/database.js"></script>
-<script src="js/map.js"></script>
+<div class="p-10 grid md:grid-cols-4 gap-6" id="shop"></div>
+
+<script src="js/data.js"></script>
+<script src="js/shop.js"></script>
 
 </body>
 </html>

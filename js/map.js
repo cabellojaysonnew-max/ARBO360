@@ -1,18 +1,7 @@
 
-const map=L.map('map').setView([13.7,123.3],10)
-
+const map=L.map('map').setView([13.65,123.25],10)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
 
-fetch("data/arbos.json")
-.then(r=>r.json())
-.then(data=>{
-
-data.forEach(a=>{
-
-L.marker([a.lat,a.lng])
-.addTo(map)
-.bindPopup(`<b>${a.name}</b><br><a href="tour.html">360 Tour</a>`)
-
-})
-
+tours.forEach(t=>{
+L.marker([t.lat,t.lng]).addTo(map).bindPopup(`<b>${t.name}</b><br>${t.experience}`)
 })

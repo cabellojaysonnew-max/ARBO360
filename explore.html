@@ -3,31 +3,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Cart</title>
+<title>ARBO Tours</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100">
 
-<header class="bg-green-700 text-white p-5">
-<h1 class="text-2xl font-bold">Shopping Cart</h1>
+<header class="bg-green-700 text-white p-4 text-xl font-bold">
+ARBO Virtual Tours
 </header>
 
-<div class="p-10">
+<div class="p-10 grid md:grid-cols-3 gap-6" id="tourGrid"></div>
 
-<div id="cartItems"></div>
-
-<h2 class="mt-6 text-xl font-bold">
-Total ₱<span id="total">0</span>
-</h2>
-
-<button onclick="checkout()" class="bg-green-600 text-white px-6 py-3 mt-4 rounded">
-Checkout
-</button>
-
-</div>
-
-<script src="js/cart.js"></script>
+<script src="js/data.js"></script>
+<script src="js/tours.js"></script>
 
 </body>
 </html>
