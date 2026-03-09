@@ -1,34 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
 
-const API="https://script.google.com/macros/s/AKfycbwIRpvQezzXayJ8N3S_gpvz6yZxtLTmZp6RXrN-u7w7M4UfzqVfvLz-DPIpqNTKedK17Q/exec"
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-const params=new URLSearchParams(location.search)
-const arbo=params.get("arbo")
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
+<script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
 
-fetch(API+"?action=getScenes&arbo="+arbo)
-.then(r=>r.json())
-.then(scenes=>{
+<style>
 
-const config={default:{firstScene:scenes[0].id},scenes:{}}
+body{
+margin:0;
+font-family:Arial;
+}
 
-scenes.forEach(s=>{
+#panorama{
+width:100%;
+height:80vh;
+}
 
-config.scenes[s.id]={
-title:s.name,
+.popup{
+display:none;
+position:fixed;
+top:20%;
+left:50%;
+transform:translateX(-50%);
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+max-width:400px;
+}
+
+.popup img{
+width:100%;
+border-radius:8px;
+}
+
+.popup button{
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="panorama"></div>
+
+<!-- FARMER STORY POPUP -->
+
+<div id="storyPopup" class="popup">
+
+<h3>Farmer Story</h3>
+
+<p>
+Mang Pedro has been cultivating rice in this ARBO for over 25 years.  
+Through agrarian reform support, the cooperative now produces high-quality organic rice sold across the province.
+</p>
+
+<button onclick="closePopup()">Close</button>
+
+</div>
+
+
+<script>
+
+function openStory(){
+document.getElementById("storyPopup").style.display="block"
+}
+
+function closePopup(){
+document.getElementById("storyPopup").style.display="none"
+}
+
+pannellum.viewer('panorama',{
+
+default:{
+firstScene:"ricefield",
+sceneFadeDuration:1000
+},
+
+scenes:{
+
+ricefield:{
+title:"Rice Field",
 type:"equirectangular",
-panorama:"tours/"+s.panorama,
-hotSpots:[]
+panorama:"360/ricefield.jpg",
+
+hotSpots:[
+
+{
+pitch:2,
+yaw:40,
+type:"scene",
+text:"Go to Drying Area",
+sceneId:"drying"
+},
+
+{
+pitch:5,
+yaw:120,
+type:"info",
+text:"Farmer Story",
+clickHandlerFunc:openStory
+},
+
+{
+pitch:-3,
+yaw:-60,
+type:"info",
+text:"Buy Organic Rice",
+URL:"marketplace.html?product=organic-rice"
+}
+
+]
+
+},
+
+drying:{
+title:"Drying Facility",
+type:"equirectangular",
+panorama:"360/drying.jpg",
+
+hotSpots:[
+
+{
+pitch:1,
+yaw:-50,
+type:"scene",
+text:"Go to Product Store",
+sceneId:"store"
+},
+
+{
+pitch:3,
+yaw:80,
+type:"info",
+text:"View Rice Processing Photo",
+clickHandlerFunc:function(){
+window.open("images/drying-process.jpg")
+}
+}
+
+]
+
+},
+
+store:{
+title:"ARBO Product Store",
+type:"equirectangular",
+panorama:"360/store.jpg",
+
+hotSpots:[
+
+{
+pitch:2,
+yaw:150,
+type:"scene",
+text:"Back to Rice Field",
+sceneId:"ricefield"
+},
+
+{
+pitch:5,
+yaw:10,
+type:"info",
+text:"Buy Coconut Sugar",
+URL:"marketplace.html?product=coconut-sugar"
+},
+
+{
+pitch:-2,
+yaw:-100,
+type:"info",
+text:"Buy Organic Coffee",
+URL:"marketplace.html?product=arbo-coffee"
+}
+
+]
+
+}
+
 }
 
 })
 
-const viewer=pannellum.viewer("panorama",config)
+</script>
 
-viewer.on('mousedown',function(e){
-const pitch=e.pitch
-const yaw=e.yaw
-if(confirm("Create hotspot here?")){
-alert("Pitch:"+pitch+" Yaw:"+yaw+"\nUse this in admin panel.")
-}
-})
-
-})
+</body>
+</html>
