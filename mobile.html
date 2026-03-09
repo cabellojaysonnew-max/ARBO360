@@ -1,0 +1,21 @@
+
+<h2>Field Officer Dashboard</h2>
+
+<p>Mobile monitoring for ARBO locations and sales.</p>
+
+<button onclick="getLocation()">Show My GPS Location</button>
+
+<p id="gps"></p>
+
+<script>
+function getLocation(){
+
+navigator.geolocation.getCurrentPosition(p=>{
+
+document.getElementById("gps").innerHTML=
+"Lat: "+p.coords.latitude+" Lng: "+p.coords.longitude
+
+})
+
+}
+</script>

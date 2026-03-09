@@ -3,29 +3,37 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Discover ARBOs</title>
-<link rel="stylesheet" href="style.css">
+<title>Camarines Sur ARBO Explorer</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="pwa/manifest.json">
 </head>
+
 <body>
 
 <header class="hero">
-<div class="hero-content">
-<h1>Discover ARBOs</h1>
-<p>Farm tourism, farmer stories, ARBO products, and immersive virtual exploration.</p>
+<h1>ARBO Tourism & Marketplace</h1>
+<p>Explore ARBO communities, support farmers, and experience virtual farm tourism.</p>
 
 <div class="hero-buttons">
-<a href="tours.html" class="btn-primary">ARBO 360 Tour</a>
-<a href="marketplace.html" class="btn-secondary">Shop Products</a>
-</div>
+<a href="map.html">Explore Camarines Sur Map</a>
+<a href="marketplace.html">Marketplace</a>
 </div>
 </header>
 
 <nav class="nav">
-<a href="index.html">Home</a>
-<a href="tours.html">ARBO Tours</a>
+<a href="map.html">Tourism Map</a>
+<a href="tours.html">360 ARBO Tours</a>
+<a href="farmers.html">Farmer Profiles</a>
 <a href="marketplace.html">Marketplace</a>
-<a href="login.html">Admin</a>
+<a href="dashboard.html">Admin Analytics</a>
+<a href="mobile.html">Field Officer</a>
 </nav>
+
+<script>
+if('serviceWorker' in navigator){
+navigator.serviceWorker.register('pwa/sw.js')
+}
+</script>
 
 </body>
 </html>
