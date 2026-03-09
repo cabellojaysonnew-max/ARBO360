@@ -1,26 +1,24 @@
 
-function saveArbo(){
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ARBO Virtual Tours</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
 
-const a={
-name:document.getElementById("name").value,
-location:document.getElementById("location").value,
-experience:document.getElementById("experience").value,
-image:document.getElementById("image").value,
-lat:parseFloat(document.getElementById("lat").value),
-lng:parseFloat(document.getElementById("lng").value)
-}
+<body class="bg-gray-100">
 
-arbos.push(a)
-saveDB()
+<header class="bg-green-700 text-white p-5">
+<h1 class="text-2xl font-bold">ARBO Virtual Tours</h1>
+</header>
 
-alert("ARBO saved")
+<div class="p-10">
+<div id="tourGrid" class="grid md:grid-cols-3 gap-6"></div>
+</div>
 
-}
+<script src="js/database.js"></script>
+<script src="js/tours.js"></script>
 
-function uploadPano(){
-alert("Connect this to cloud storage like Google Drive.")
-}
-
-function saveArticle(){
-alert("Store article in database or Google Sheets.")
-}
+</body>
+</html>

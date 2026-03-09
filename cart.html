@@ -1,21 +1,32 @@
 
-<h2>Your Cart</h2>
+function addProduct(){
 
-<div id="cart"></div>
-
-<button onclick="checkout()">Place Order</button>
-
-<script>
-
-let cart=JSON.parse(localStorage.getItem("cart")||"[]")
-
-document.getElementById("cart").innerHTML=cart.map(c=>
-`<p>${c.name} - ₱${c.price}</p>`
-).join("")
-
-function checkout(){
-alert("Order submitted")
-localStorage.removeItem("cart")
+const p={
+name:document.getElementById("pname").value,
+price:parseFloat(document.getElementById("pprice").value),
+image:document.getElementById("pimage").value
 }
 
-</script>
+products.push(p)
+saveProducts()
+
+alert("Product added")
+
+}
+
+function addTour(){
+
+const t={
+name:document.getElementById("tname").value,
+experience:document.getElementById("texp").value,
+image:document.getElementById("timg").value,
+lat:parseFloat(document.getElementById("tlat").value),
+lng:parseFloat(document.getElementById("tlng").value)
+}
+
+tours.push(t)
+saveTours()
+
+alert("Tour added")
+
+}

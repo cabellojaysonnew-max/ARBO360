@@ -1,17 +1,24 @@
 
-<h2>Admin Dashboard</h2>
+<!DOCTYPE html>
+<html>
+<head>
 
-<button onclick="logout()">Logout</button>
+<meta charset="UTF-8">
+<title>360 Viewer</title>
 
-<script>
+<script src="https://www.marzipano.net/demos/vendor/marzipano.js"></script>
 
-if(!localStorage.getItem("admin")){
-window.location="login.html"
-}
+<style>
+#viewer{width:100%;height:100vh;}
+</style>
 
-function logout(){
-localStorage.removeItem("admin")
-window.location="index.html"
-}
+</head>
 
-</script>
+<body>
+
+<div id="viewer"></div>
+
+<script src="js/viewer.js"></script>
+
+</body>
+</html>
