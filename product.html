@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Organic Rice</h2>
+<p>High quality organic rice from ARBO farmers.</p>
+
+<button onclick="addCart()">Add to Cart</button>
+
+<script>
+function addCart(){
+let cart=JSON.parse(localStorage.getItem("cart")||"[]")
+cart.push({name:"Organic Rice",price:120})
+localStorage.setItem("cart",JSON.stringify(cart))
+alert("Added to cart")
+}
+</script>
+
+</body>
+</html>

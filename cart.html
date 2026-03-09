@@ -1,0 +1,21 @@
+
+<h2>Your Cart</h2>
+
+<div id="cart"></div>
+
+<button onclick="checkout()">Place Order</button>
+
+<script>
+
+let cart=JSON.parse(localStorage.getItem("cart")||"[]")
+
+document.getElementById("cart").innerHTML=cart.map(c=>
+`<p>${c.name} - ₱${c.price}</p>`
+).join("")
+
+function checkout(){
+alert("Order submitted")
+localStorage.removeItem("cart")
+}
+
+</script>
