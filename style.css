@@ -1,113 +1,55 @@
-
-body{
-margin:0;
-font-family:Arial;
-background:#0b3d2e;
-color:white;
-}
-
-.hero{
-height:70vh;
-background:url("https://picsum.photos/1200/700") center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-}
-
-.hero-overlay{
-background:rgba(0,0,0,0.5);
-padding:40px;
-border-radius:10px;
-}
-
-.hero h1{
-font-size:3rem;
-color:#FFD700;
-}
-
-.btn-gold{
-background:#FFD700;
-padding:12px 20px;
-border-radius:30px;
-color:#0b3d2e;
-text-decoration:none;
-margin:10px;
-}
-
-.btn-outline{
-border:2px solid #FFD700;
-padding:12px 20px;
-border-radius:30px;
-color:#FFD700;
-text-decoration:none;
-}
-
-.nav{
-display:flex;
-justify-content:center;
-gap:20px;
+.admin-header{
 background:#14532d;
-padding:10px;
+padding:25px;
+text-align:center;
+border-bottom:4px solid #FFD700;
 }
 
-.nav a{
+.admin-header h1{
 color:#FFD700;
-text-decoration:none;
-font-weight:bold;
+margin:0;
 }
 
-.grid{
+.admin-container{
+max-width:900px;
+margin:40px auto;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
+grid-template-columns:1fr 1fr;
+gap:30px;
 padding:20px;
 }
 
-.card{
+.admin-card{
 background:#1f513f;
+padding:25px;
 border-radius:10px;
-overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.3);
 }
 
-.card img{
+.admin-card h2{
+color:#FFD700;
+margin-bottom:20px;
+}
+
+.admin-card input{
 width:100%;
-height:160px;
-object-fit:cover;
+padding:10px;
+margin-bottom:12px;
+border-radius:6px;
+border:none;
 }
 
-.card-content{
-padding:15px;
-}
-
-.card a, .card button{
-display:block;
+.btn-primary{
 background:#FFD700;
 color:#0b3d2e;
-padding:10px;
-margin-top:10px;
+padding:12px;
 border:none;
 border-radius:6px;
-text-align:center;
-text-decoration:none;
+font-weight:bold;
+cursor:pointer;
+width:100%;
 }
 
-.section-title{
-text-align:center;
-margin-top:20px;
-}
-
-#map{
-height:90vh;
-}
-
-#panorama{
-height:85vh;
-}
-
-.stats{
-display:flex;
-justify-content:center;
-gap:40px;
-margin:40px 0;
+.btn-primary:hover{
+background:#ffcc00;
 }
