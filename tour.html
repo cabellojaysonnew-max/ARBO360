@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <link rel="stylesheet"
@@ -16,44 +17,19 @@ href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
 <body>
 
 <nav class="nav">
-<a href="index.html">Home</a>
-<a href="tours.html">Tours</a>
+<a href="arbos.html">ARBO Farms</a>
 <a href="marketplace.html">Marketplace</a>
 </nav>
 
 <div id="panorama"></div>
 
 <script>
-const API="https://script.google.com/macros/s/AKfycbwIRpvQezzXayJ8N3S_gpvz6yZxtLTmZp6RXrN-u7w7M4UfzqVfvLz-DPIpqNTKedK17Q/exec"
 
-const params=new URLSearchParams(location.search)
-const arbo=params.get("arbo")
-
-fetch(API+"?action=getScenes&arbo="+arbo)
-.then(r=>r.json())
-.then(scenes=>{
-
-if(!scenes.length){
-alert("No scenes available")
-return
-}
-
-const config={default:{firstScene:scenes[0].id},scenes:{}}
-
-scenes.forEach(s=>{
-
-config.scenes[s.id]={
-title:s.name,
-type:"equirectangular",
-panorama:"tours/"+s.panorama,
-hotSpots:[]
-}
-
+pannellum.viewer('panorama',{
+"type":"equirectangular",
+"panorama":"https://pannellum.org/images/alma.jpg"
 })
 
-pannellum.viewer("panorama",config)
-
-})
 </script>
 
 </body>

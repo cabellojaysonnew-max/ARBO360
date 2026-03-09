@@ -1,55 +1,110 @@
-.admin-header{
-background:#14532d;
-padding:25px;
-text-align:center;
-border-bottom:4px solid #FFD700;
-}
 
-.admin-header h1{
-color:#FFD700;
+body{
 margin:0;
+font-family:Arial;
+background:#0b3d2e;
+color:white;
 }
 
-.admin-container{
-max-width:900px;
-margin:40px auto;
+.hero{
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('https://picsum.photos/1400/800');
+background-size:cover;
+}
+
+.hero-content{
+max-width:600px;
+text-align:center;
+}
+
+.nav{
+display:flex;
+justify-content:center;
+gap:20px;
+background:#14532d;
+padding:12px;
+}
+
+.nav a{
+color:#FFD700;
+text-decoration:none;
+font-weight:bold;
+}
+
+.grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
 padding:20px;
 }
 
-.admin-card{
+.card{
 background:#1f513f;
-padding:25px;
-border-radius:10px;
-box-shadow:0 8px 20px rgba(0,0,0,.3);
+border-radius:12px;
+overflow:hidden;
 }
 
-.admin-card h2{
-color:#FFD700;
-margin-bottom:20px;
-}
-
-.admin-card input{
+.card img{
 width:100%;
-padding:10px;
-margin-bottom:12px;
-border-radius:6px;
-border:none;
+height:160px;
+object-fit:cover;
+}
+
+.card-body{
+padding:15px;
 }
 
 .btn-primary{
 background:#FFD700;
 color:#0b3d2e;
-padding:12px;
+padding:10px 16px;
 border:none;
-border-radius:6px;
-font-weight:bold;
+border-radius:8px;
 cursor:pointer;
-width:100%;
+text-decoration:none;
+display:inline-block;
 }
 
-.btn-primary:hover{
-background:#ffcc00;
+.btn-secondary{
+border:2px solid #FFD700;
+padding:10px 16px;
+border-radius:8px;
+color:#FFD700;
+text-decoration:none;
+}
+
+.small{
+padding:6px 10px;
+font-size:14px;
+}
+
+#panorama{
+height:85vh;
+}
+
+#map{
+height:90vh;
+}
+
+.dashboard{
+display:flex;
+height:100vh;
+}
+
+.sidebar{
+width:200px;
+background:#14532d;
+padding:20px;
+}
+
+.content{
+flex:1;
+padding:30px;
+}
+
+.hidden{
+display:none;
 }

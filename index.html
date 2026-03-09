@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DAR ARBO Virtual Tourism</title>
+<title>Discover ARBO Farms</title>
 <link rel="stylesheet" href="style.css">
 <link rel="manifest" href="manifest.json">
 </head>
@@ -11,37 +11,30 @@
 <body>
 
 <header class="hero">
-<div class="hero-overlay">
-<h1>Discover ARBO Farms of Camarines Sur</h1>
-<p>Explore farms in 360°, meet farmers, and shop authentic ARBO products.</p>
+<div class="hero-content">
+<h1>Discover ARBO Farms</h1>
+<p>Explore agrarian reform communities through immersive 360° tours and support farmers by buying their products.</p>
 
 <div class="hero-buttons">
-<a href="tours.html" class="btn-gold">Explore ARBO Tours</a>
-<a href="marketplace.html" class="btn-outline">Shop Products</a>
+<a href="arbos.html" class="btn-primary">Explore ARBO Tours</a>
+<a href="marketplace.html" class="btn-secondary">Shop Products</a>
 </div>
+
 </div>
 </header>
 
 <nav class="nav">
-<a href="index.html">Home</a>
-<a href="tours.html">ARBO Tours</a>
-<a href="map.html">Map</a>
+<a href="arbos.html">ARBO Tours</a>
+<a href="map.html">ARBO Map</a>
 <a href="marketplace.html">Marketplace</a>
 <a href="admin.html">Admin</a>
 </nav>
 
-<section class="impact">
-<h2>Empowering Farmers</h2>
-
-<div class="stats">
-<div><h3>120+</h3><p>ARBOs</p></div>
-<div><h3>3500+</h3><p>Farmers</p></div>
-<div><h3>50+</h3><p>Products</p></div>
-</div>
-
-</section>
-
-<script src="app.js"></script>
+<script>
+if('serviceWorker' in navigator){
+navigator.serviceWorker.register('sw.js')
+}
+</script>
 
 </body>
 </html>

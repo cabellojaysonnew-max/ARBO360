@@ -1,6 +1,6 @@
 {
-  "name": "DAR ARBO Virtual Tourism",
-  "short_name": "ARBO Tour",
+  "name": "ARBO Tourism Platform",
+  "short_name": "ARBO",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#0b3d2e",

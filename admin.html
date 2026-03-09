@@ -1,32 +1,60 @@
-<header class="admin-header">
-<h1>ARBO Admin Dashboard</h1>
-</header>
 
-<div class="admin-container">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
 
-<div class="admin-card">
+<body>
 
-<h2>Create Product Hotspot</h2>
+<div class="dashboard">
 
-<input placeholder="Scene ID">
-<input placeholder="Product Name">
-<input placeholder="Price">
-<input placeholder="Pitch">
-<input placeholder="Yaw">
+<aside class="sidebar">
 
-<button class="btn-primary">Save Hotspot</button>
+<h2>Admin</h2>
 
-</div>
+<a onclick="show('arbos')">ARBOs</a>
+<a onclick="show('products')">Products</a>
+<a onclick="show('orders')">Orders</a>
+<a onclick="show('analytics')">Analytics</a>
 
+</aside>
 
-<div class="admin-card">
+<main class="content">
 
+<section id="arbos">
+<h2>ARBO Management</h2>
+<p>Manage ARBO data.</p>
+</section>
+
+<section id="products" class="hidden">
+<h2>Products</h2>
+<p>Manage products.</p>
+</section>
+
+<section id="orders" class="hidden">
 <h2>Orders</h2>
+<p>View orders.</p>
+</section>
 
-<button class="btn-primary">Load Orders</button>
+<section id="analytics" class="hidden">
+<h2>Analytics</h2>
+<p>Tourism analytics dashboard.</p>
+</section>
 
-<div id="ordersTable"></div>
+</main>
 
 </div>
 
-</div>
+<script>
+
+function show(id){
+document.querySelectorAll("section").forEach(s=>s.classList.add("hidden"))
+document.getElementById(id).classList.remove("hidden")
+}
+
+</script>
+
+</body>
+</html>
