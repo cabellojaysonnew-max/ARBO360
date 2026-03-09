@@ -1,16 +1,16 @@
 
-ADVANCED DAR ARBO VIRTUAL TOUR SYSTEM
+DAR ARBO VIRTUAL TOURISM PLATFORM
 
 Features
-- Multi-scene 360 tours
-- Product hotspots
-- ARBO map
-- Google Sheets backend
-- Hotspot editor
-- Mobile friendly
-- Green and Gold theme
+- ARBO tourism map
+- Multi-scene 360 farm tours
+- Walking navigation between scenes
+- Click on 360 image to get hotspot coordinates
+- Marketplace for ARBO products
+- Admin dashboard for hotspots and orders
+- Installable mobile app (PWA)
 
-Google Sheets Tables
+Required Google Sheets
 
 ARBOS
 id | name | location | panorama | lat | lng
@@ -19,10 +19,10 @@ SCENES
 id | arbo_id | name | panorama
 
 PRODUCTS
-id | scene | name | price | pitch | yaw
+id | scene | name | price | pitch | yaw | image
 
 ORDERS
-date | product | arbo | customer | phone | quantity
+date | product | customer | phone | quantity
 
 Folders needed
 

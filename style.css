@@ -17,8 +17,8 @@ border-bottom:4px solid #d4af37;
 display:flex;
 justify-content:center;
 gap:20px;
-padding:10px;
 background:#0f5132;
+padding:10px;
 }
 
 .nav a{
@@ -29,7 +29,7 @@ font-weight:bold;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:20px;
 padding:20px;
 }
@@ -50,24 +50,33 @@ object-fit:cover;
 padding:15px;
 }
 
-.card a{
+.card button,.card a{
 display:block;
+margin-top:10px;
 background:#d4af37;
 color:#0b3d2e;
 padding:10px;
 text-align:center;
-margin-top:10px;
-text-decoration:none;
+border:none;
 border-radius:6px;
-}
-
-#panorama{
-height:85vh;
-width:100%;
+text-decoration:none;
 }
 
 #map{
 height:90vh;
+}
+
+#panorama{
+height:85vh;
+}
+
+.admin{
+max-width:400px;
+margin:auto;
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
 }
 
 .popup{
@@ -82,23 +91,6 @@ align-items:center;
 justify-content:center;
 }
 
-.popup-card{
-background:white;
-color:black;
-padding:20px;
-width:300px;
-border-radius:10px;
-}
-
 .hidden{
 display:none;
-}
-
-.admin{
-max-width:400px;
-margin:auto;
-padding:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
 }

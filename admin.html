@@ -8,32 +8,59 @@
 
 <body>
 
-<header class="header">
-<h2>Hotspot Editor</h2>
-</header>
+<header class="header"><h2>Admin Dashboard</h2></header>
 
 <div class="admin">
 
-<label>Scene ID</label>
-<input id="scene">
+<h3>Create Hotspot</h3>
 
-<label>Product Name</label>
-<input id="product">
+<input id="scene" placeholder="Scene ID">
+<input id="product" placeholder="Product Name">
+<input id="price" placeholder="Price">
+<input id="pitch" placeholder="Pitch">
+<input id="yaw" placeholder="Yaw">
 
-<label>Price</label>
-<input id="price">
+<button onclick="saveHotspot()">Save</button>
 
-<label>Pitch</label>
-<input id="pitch">
+<h3>Orders</h3>
+<button onclick="loadOrders()">Load Orders</button>
 
-<label>Yaw</label>
-<input id="yaw">
-
-<button onclick="saveHotspot()">Save Hotspot</button>
+<div id="orders"></div>
 
 </div>
 
-<script src="admin.js"></script>
+<script>
+
+const API="https://script.google.com/macros/s/AKfycbwIRpvQezzXayJ8N3S_gpvz6yZxtLTmZp6RXrN-u7w7M4UfzqVfvLz-DPIpqNTKedK17Q/exec"
+
+async function saveHotspot(){
+await fetch(API,{
+method:"POST",
+body:JSON.stringify({
+action:"addHotspot",
+scene:scene.value,
+product:product.value,
+price:price.value,
+pitch:pitch.value,
+yaw:yaw.value
+})
+})
+alert("Saved")
+}
+
+async function loadOrders(){
+const r=await fetch(API+"?action=getOrders")
+const data=await r.json()
+
+orders.innerHTML=""
+
+data.forEach(o=>{
+orders.innerHTML+=`<p>${o.customer} ordered ${o.product}</p>`
+})
+
+}
+
+</script>
 
 </body>
 </html>

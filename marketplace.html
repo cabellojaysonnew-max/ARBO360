@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header"><h2>ARBO Marketplace</h2></header>
+
+<div id="products" class="grid"></div>
+
+<script>
+
+const API="https://script.google.com/macros/s/AKfycbwIRpvQezzXayJ8N3S_gpvz6yZxtLTmZp6RXrN-u7w7M4UfzqVfvLz-DPIpqNTKedK17Q/exec"
+
+fetch(API+"?action=getAllProducts")
+.then(r=>r.json())
+.then(products=>{
+
+const grid=document.getElementById("products")
+
+products.forEach(p=>{
+
+grid.innerHTML+=`
+<div class="card">
+
+<img src="images/${p.image}">
+
+<div class="card-content">
+
+<h3>${p.name}</h3>
+<p>₱${p.price}</p>
+
+<button onclick="order('${p.id}')">Order</button>
+
+</div>
+
+</div>
+`
+
+})
+
+})
+
+function order(id){
+
+const name=prompt("Your Name")
+const phone=prompt("Phone")
+
+fetch(API,{
+method:"POST",
+body:JSON.stringify({
+action:"order",
+product:id,
+customer:name,
+phone:phone,
+quantity:1
+})
+})
+
+alert("Order submitted")
+
+}
+
+</script>
+
+</body>
+</html>
