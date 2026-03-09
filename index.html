@@ -1,41 +1,26 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARBO Tourism - Camarines Sur 1</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
+function saveArbo(){
 
-<body class="bg-gray-50">
+const a={
+name:document.getElementById("name").value,
+location:document.getElementById("location").value,
+experience:document.getElementById("experience").value,
+image:document.getElementById("image").value,
+lat:parseFloat(document.getElementById("lat").value),
+lng:parseFloat(document.getElementById("lng").value)
+}
 
-<header class="bg-green-700 text-white p-6">
-<h1 class="text-3xl font-bold">ARBO Tourism – Camarines Sur 1</h1>
-<p>Experience Agrarian Communities</p>
-</header>
+arbos.push(a)
+saveDB()
 
-<section class="p-10 grid md:grid-cols-2 gap-10 items-center">
+alert("ARBO saved")
 
-<div>
-<h2 class="text-4xl font-bold mb-4">Discover ARBO Communities</h2>
-<p class="mb-6">Farm tours, products, and community experiences across DAR Camarines Sur 1.</p>
+}
 
-<a href="explore.html" class="bg-green-600 text-white px-6 py-3 rounded mr-3">Explore ARBO Tours</a>
-<a href="marketplace.html" class="bg-yellow-500 text-white px-6 py-3 rounded">Marketplace</a>
-</div>
+function uploadPano(){
+alert("Connect this to cloud storage like Google Drive.")
+}
 
-<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854" class="rounded shadow">
-
-</section>
-
-<section class="p-10">
-<h2 class="text-2xl font-bold mb-6">Featured ARBO Experiences</h2>
-<div id="arboCards" class="grid md:grid-cols-3 gap-6"></div>
-</section>
-
-<script src="js/data.js"></script>
-<script src="js/app.js"></script>
-
-</body>
-</html>
+function saveArticle(){
+alert("Store article in database or Google Sheets.")
+}

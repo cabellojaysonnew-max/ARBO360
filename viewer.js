@@ -1,5 +1,5 @@
 
-const grid=document.getElementById("arboGrid")
+const grid=document.getElementById("grid")
 
 arbos.forEach(a=>{
 
@@ -11,10 +11,13 @@ grid.innerHTML+=`
 <div class="p-4">
 
 <h3 class="font-bold">${a.name}</h3>
+
+<p>${a.location}</p>
+
 <p>${a.experience}</p>
 
 <a href="viewer.html" class="text-green-700 font-bold">
-Enter 360 Tour
+View 360 Tour
 </a>
 
 </div>

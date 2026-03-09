@@ -1,26 +1,12 @@
 
-const API="https://script.google.com/macros/s/AKfycbwIRpvQezzXayJ8N3S_gpvz6yZxtLTmZp6RXrN-u7w7M4UfzqVfvLz-DPIpqNTKedK17Q/exec"
+const map=L.map("map").setView([13.6,123.2],9)
 
-async function saveHotspot(){
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map)
 
-const scene=document.getElementById("scene").value
-const product=document.getElementById("product").value
-const price=document.getElementById("price").value
-const pitch=document.getElementById("pitch").value
-const yaw=document.getElementById("yaw").value
+arbos.forEach(a=>{
 
-await fetch(API,{
-method:"POST",
-body:JSON.stringify({
-action:"addHotspot",
-scene:scene,
-product:product,
-price:price,
-pitch:pitch,
-yaw:yaw
+L.marker([a.lat,a.lng])
+.addTo(map)
+.bindPopup(`<b>${a.name}</b><br>${a.experience}`)
+
 })
-})
-
-alert("Hotspot saved")
-
-}
