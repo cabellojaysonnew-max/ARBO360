@@ -1,16 +1,19 @@
 
-DAR ARBO VIRTUAL TOURISM PLATFORM
+DEPLOYMENT GUIDE
 
-Features
-- ARBO tourism map
-- Multi-scene 360 farm tours
-- Walking navigation between scenes
-- Click on 360 image to get hotspot coordinates
-- Marketplace for ARBO products
-- Admin dashboard for hotspots and orders
-- Installable mobile app (PWA)
+Upload this folder to:
 
-Required Google Sheets
+GitHub Pages
+Netlify
+Firebase Hosting
+or any web server.
+
+Required folders to create:
+
+/tours
+/images
+
+Google Sheets tables required:
 
 ARBOS
 id | name | location | panorama | lat | lng
@@ -19,14 +22,9 @@ SCENES
 id | arbo_id | name | panorama
 
 PRODUCTS
-id | scene | name | price | pitch | yaw | image
+id | scene | name | price | image
 
 ORDERS
 date | product | customer | phone | quantity
 
-Folders needed
-
-/tours
-/images
-
-360 images must be equirectangular.
+Admin password: DAR2026

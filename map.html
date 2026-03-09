@@ -3,29 +3,43 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <link rel="stylesheet" href="style.css">
+
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 </head>
 
 <body>
 
-<header class="header"><h2>ARBO Tourism Map</h2></header>
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="tours.html">Tours</a>
+<a href="marketplace.html">Marketplace</a>
+</nav>
 
 <div id="map"></div>
 
 <script>
+
 const map=L.map('map').setView([13.14,123.73],9)
+
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
 
 fetch("https://script.google.com/macros/s/AKfycbwIRpvQezzXayJ8N3S_gpvz6yZxtLTmZp6RXrN-u7w7M4UfzqVfvLz-DPIpqNTKedK17Q/exec?action=getARBOS")
 .then(r=>r.json())
 .then(data=>{
+
 data.forEach(a=>{
+
 L.marker([a.lat,a.lng]).addTo(map)
 .bindPopup("<b>"+a.name+"</b><br><a href='tour.html?arbo="+a.id+"'>Open Tour</a>")
+
 })
+
 })
+
 </script>
 
 </body>

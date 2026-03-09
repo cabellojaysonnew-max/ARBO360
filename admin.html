@@ -8,55 +8,39 @@
 
 <body>
 
-<header class="header"><h2>Admin Dashboard</h2></header>
+<div id="login">
 
-<div class="admin">
+<h2>Admin Login</h2>
 
-<h3>Create Hotspot</h3>
+<input type="password" id="pass" placeholder="Enter Password">
+<button onclick="login()">Login</button>
 
-<input id="scene" placeholder="Scene ID">
-<input id="product" placeholder="Product Name">
-<input id="price" placeholder="Price">
-<input id="pitch" placeholder="Pitch">
-<input id="yaw" placeholder="Yaw">
+</div>
 
-<button onclick="saveHotspot()">Save</button>
+<div id="dashboard" style="display:none">
 
-<h3>Orders</h3>
-<button onclick="loadOrders()">Load Orders</button>
+<h2>Admin Dashboard</h2>
 
-<div id="orders"></div>
+<p>Manage hotspots and monitor orders via Google Sheets.</p>
 
 </div>
 
 <script>
 
-const API="https://script.google.com/macros/s/AKfycbwIRpvQezzXayJ8N3S_gpvz6yZxtLTmZp6RXrN-u7w7M4UfzqVfvLz-DPIpqNTKedK17Q/exec"
+function login(){
 
-async function saveHotspot(){
-await fetch(API,{
-method:"POST",
-body:JSON.stringify({
-action:"addHotspot",
-scene:scene.value,
-product:product.value,
-price:price.value,
-pitch:pitch.value,
-yaw:yaw.value
-})
-})
-alert("Saved")
+const p=document.getElementById("pass").value
+
+if(p==="DAR2026"){
+
+login.style.display="none"
+dashboard.style.display="block"
+
+}else{
+
+alert("Wrong password")
+
 }
-
-async function loadOrders(){
-const r=await fetch(API+"?action=getOrders")
-const data=await r.json()
-
-orders.innerHTML=""
-
-data.forEach(o=>{
-orders.innerHTML+=`<p>${o.customer} ordered ${o.product}</p>`
-})
 
 }
 

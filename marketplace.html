@@ -8,7 +8,13 @@
 
 <body>
 
-<header class="header"><h2>ARBO Marketplace</h2></header>
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="tours.html">Tours</a>
+<a href="map.html">Map</a>
+</nav>
+
+<h2 class="section-title">ARBO Marketplace</h2>
 
 <div id="products" class="grid"></div>
 
@@ -27,7 +33,7 @@ products.forEach(p=>{
 grid.innerHTML+=`
 <div class="card">
 
-<img src="images/${p.image}">
+<img src="images/${p.image}" onerror="this.src='https://picsum.photos/200/200'">
 
 <div class="card-content">
 
@@ -48,7 +54,7 @@ grid.innerHTML+=`
 function order(id){
 
 const name=prompt("Your Name")
-const phone=prompt("Phone")
+const phone=prompt("Phone Number")
 
 fetch(API,{
 method:"POST",
@@ -61,7 +67,7 @@ quantity:1
 })
 })
 
-alert("Order submitted")
+alert("Order sent!")
 
 }
 
