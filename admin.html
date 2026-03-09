@@ -1,50 +1,32 @@
+<header class="admin-header">
+<h1>ARBO Admin Dashboard</h1>
+</header>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="style.css">
-</head>
+<div class="admin-container">
 
-<body>
+<div class="admin-card">
 
-<div id="login">
+<h2>Create Product Hotspot</h2>
 
-<h2>Admin Login</h2>
+<input placeholder="Scene ID">
+<input placeholder="Product Name">
+<input placeholder="Price">
+<input placeholder="Pitch">
+<input placeholder="Yaw">
 
-<input type="password" id="pass" placeholder="Enter Password">
-<button onclick="login()">Login</button>
-
-</div>
-
-<div id="dashboard" style="display:none">
-
-<h2>Admin Dashboard</h2>
-
-<p>Manage hotspots and monitor orders via Google Sheets.</p>
+<button class="btn-primary">Save Hotspot</button>
 
 </div>
 
-<script>
 
-function login(){
+<div class="admin-card">
 
-const p=document.getElementById("pass").value
+<h2>Orders</h2>
 
-if(p==="DAR2026"){
+<button class="btn-primary">Load Orders</button>
 
-login.style.display="none"
-dashboard.style.display="block"
+<div id="ordersTable"></div>
 
-}else{
+</div>
 
-alert("Wrong password")
-
-}
-
-}
-
-</script>
-
-</body>
-</html>
+</div>
