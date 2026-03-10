@@ -1,10 +1,6 @@
 
-document.getElementById("checkoutForm").addEventListener("submit",function(e){
-
+document.getElementById("orderForm").addEventListener("submit",function(e){
 e.preventDefault()
-
-alert("Order submitted (connect to Google Sheets API here)")
-
+alert("Order submitted. Connect to Google Apps Script.")
 localStorage.removeItem("cart")
-
 })

@@ -1,38 +1,21 @@
 
 let cart=JSON.parse(localStorage.getItem("cart"))||[]
-
 function addToCart(i){
-
 cart.push(i)
-
 localStorage.setItem("cart",JSON.stringify(cart))
-
 alert("Added to cart")
-
 }
-
 function loadCart(){
-
-const container=document.getElementById("cart-items")
-
+const container=document.getElementById("cart")
 if(!container) return
-
 let total=0
-
-cart.forEach(i=>{
-
-const item=document.createElement("div")
-
-item.innerText="Item "+i
-
-container.appendChild(item)
-
+cart.forEach(()=>{
+const div=document.createElement("div")
+div.innerText="Product item"
+container.appendChild(div)
 total+=100
-
 })
-
-document.getElementById("total").innerText=total
-
+const t=document.getElementById("total")
+if(t) t.innerText=total
 }
-
 window.onload=loadCart
